@@ -1,12 +1,19 @@
 # k8s-pvc-dump
 Python script that dumps in tar.gz PVCs in Kubernetes cluster
 
+Prerequisites :
+* Python 3.3+
+* Dependencies :
+    * pandas
+    * tabulate
+    * pause
+
 ## Run it : 
 
 You will need to set 3 env variables :
-* DUMP_DIR : The directory that will contains your dumps
-* PVC_DIR : The directory that contains your PVCs
-* DUMP_INTERVAL : The interval in which you want that dumps occures.
+* DUMP_DIR : The directory that will contain your dumps.
+* PVC_DIR : The directory that contains your PVCs.
+* DUMP_INTERVAL : The interval in which you want that dumps occures (in seconds). (CAN'T BE MORE THAN 86200 (1 DAY))
 
 There is an auto garbage collector that follows the schema :
 
