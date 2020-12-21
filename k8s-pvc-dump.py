@@ -24,12 +24,14 @@ def path_to_df(root_directory = "."):
         
         size = ""
         byte_size = 0
-        if(path.is_dir):
-            size = convert_bytes(getFolderSize(str(path)))
-            byte_size = getFolderSize(str(path))
-        else:
+        
+        if(path.is_file()):
             size = convert_bytes(info.st_size)
             byte_size = info.st_size
+        elif(path.is_dir()):
+            size = convert_bytes(getFolderSize(str(path)))
+            byte_size = getFolderSize(str(path))
+
         files.append({'path':str(path),
                       'size':size,
                       'byte_size':byte_size,
