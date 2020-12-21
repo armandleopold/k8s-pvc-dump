@@ -31,4 +31,3 @@ Keeping dumps that have date from :
 Throwing everything else.
 
 So you will have at maximum 9 DUMPS from every PVCs you have.
-If we imagine having a compression Ratio of 10, then you can calculate that you need approxymately the same amount of storage for PVCs and for Dumps.
