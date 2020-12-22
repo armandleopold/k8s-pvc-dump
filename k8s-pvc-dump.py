@@ -1,4 +1,5 @@
 import os
+import sys
 import pause
 import shutil
 import pandas as pd
@@ -135,7 +136,7 @@ while(True):
         dumpdf = path_to_df(DUMP_DIR)
         dumpdf['tobedel'] = dumpdf['created'].apply(dumpToDrop)
         print(tabulate(dumpdf, headers='keys', tablefmt='psql', showindex=False))
-        deletionList = list(dumpdf['path'][dumpdf['tobedel']])
+        deletionList = list(dumpdf['path'][dumpdf['tobedel'] & ~dumpdf['is_dir']])
         print("DUMPS to be deleted : "+str(deletionList))
         for dumpToDelete in deletionList:
             try:
