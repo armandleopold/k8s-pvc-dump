@@ -136,7 +136,7 @@ while(True):
         dumpdf = path_to_df(DUMP_DIR)
         dumpdf['tobedel'] = dumpdf['created'].apply(dumpToDrop)
         print(tabulate(dumpdf, headers='keys', tablefmt='psql', showindex=False))
-        deletionList = list(dumpdf['path'][dumpdf['tobedel'].astype(bool) & ~dumpdf['is_dir'].astype(bool)])
+        deletionList = list(dumpdf['path'][dumpdf['tobedel'].astype(bool) & ~dumpdf['is_dir'].map({'True': True, 'False': False})])
         print("DUMPS to be deleted : "+str(deletionList))
         for dumpToDelete in deletionList:
             try:
