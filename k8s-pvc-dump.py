@@ -46,17 +46,31 @@ def dumpToDrop(date):
     currentYear = int(now.strftime("%Y"))
     currentMonth = int(now.strftime("%m"))
     currentDay = int(now.strftime("%d"))
+    dayBefore = currentDay-1
+    monthBefore = currentMonth-1
     
+    if(currentDay < 10):
+        currentDay = "0"+str(currentDay)
+        
+    if(currentMonth < 10):
+        currentMonth = "0"+str(currentMonth)
+
+    if(dayBefore < 10):
+        dayBefore = "0"+str(dayBefore)
+    
+    if(monthBefore < 10):
+        monthBefore = "0"+str(monthBefore)
+        
     drop = False
     
-    if(date != "1-1-"+str(currentYear-1)
-    and (date != "1-1-"+str(currentYear))
-    and (date != "1-"+str(currentMonth-1)+"-"+str(currentYear))
+    if(date != "01-01-"+str(currentYear-1)
+    and (date != "01-01-"+str(currentYear))
+    and (date != "01-"+str(monthBefore)+"-"+str(currentYear))
     and (date != "21-"+str(currentMonth)+"-"+str(currentYear))
     and (date != "14-"+str(currentMonth)+"-"+str(currentYear))
-    and (date != "7-"+str(currentMonth)+"-"+str(currentYear))
-    and (date != "1-"+str(currentMonth)+"-"+str(currentYear))
-    and (date != str(currentDay-1)+"-"+str(currentMonth)+"-"+str(currentYear))
+    and (date != "07-"+str(currentMonth)+"-"+str(currentYear))
+    and (date != "01-"+str(currentMonth)+"-"+str(currentYear))
+    and (date != str(dayBefore)+"-"+str(currentMonth)+"-"+str(currentYear))
     and (date != str(currentDay)+"-"+str(currentMonth)+"-"+str(currentYear))):
         drop = True
         
