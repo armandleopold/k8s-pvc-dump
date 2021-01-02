@@ -77,7 +77,7 @@ def dumpToDrop(date):
     return drop
 
 author = "Armand LEOPOLD"
-scriptVersion  = "0.1"
+scriptVersion  = "0.2"
 execution = 0
 
 print("########################################################")
