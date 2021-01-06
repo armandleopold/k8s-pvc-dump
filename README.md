@@ -15,7 +15,7 @@ You will need to set 3 env variables :
 * PVC_DIR : The directory that contains your PVCs.
 * DUMP_INTERVAL : The interval in which you want that dumps occures (in seconds). (CAN'T BE MORE THAN 86200 (1 DAY))
 
-There is an auto garbage collector that follows the schema :
+There is (an auto garbage collector) or Embeded cleanup policy for those who are more familiar with artifact repository managment, that follows the following scheme :
 
 Keeping dumps that have date from : 
 - 1/1/currentYear-1
