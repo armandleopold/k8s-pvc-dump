@@ -31,3 +31,6 @@ Keeping dumps that have date from :
 Throwing everything else.
 
 So you will have at maximum 9 DUMPS from every PVCs you have.
+
+## Docker image : 
+
